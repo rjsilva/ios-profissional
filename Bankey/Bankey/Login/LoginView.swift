@@ -16,7 +16,7 @@ class LoginView: UIView {
         return stackView
     }()
     
-    private lazy var usernameTextField: UITextField = {
+    lazy var usernameTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "username"
         textField.delegate = self
@@ -25,7 +25,7 @@ class LoginView: UIView {
         return textField
     }()
     
-    private lazy var passwordTextField: UITextField = {
+    lazy var passwordTextField: UITextField = {
         let textfield = UITextField()
         textfield.placeholder = "password"
         textfield.isSecureTextEntry = true
@@ -46,7 +46,6 @@ class LoginView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         style()
         layout()
     }
@@ -90,11 +89,7 @@ extension LoginView: UITextFieldDelegate {
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        if textField.text != ""{
             return true
-        } else {
-            return false
-        }
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
